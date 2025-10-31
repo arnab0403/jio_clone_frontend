@@ -12,6 +12,7 @@ function page() {
     const [activePrice,setActivePrice]=useState(null);
     const user = useSelector(state=>state.user);
     const dispath=useDispatch();
+    const router = useRouter();
 
 
     function loadScript() {
@@ -95,6 +96,8 @@ function page() {
 
                  if (updatePremium.data.status==="success") {
                     dispath(updateUserPremiumDetails(true));
+                    router.push("/");
+                    
                  }
                 }catch(err){
                     console.log(err);
