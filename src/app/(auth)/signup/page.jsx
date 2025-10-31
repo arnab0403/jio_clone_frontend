@@ -61,6 +61,7 @@ function Signup() {
             } else if (response.data.status === "success") {
                 router.push("/");
             }
+            setLoading(false);
         } catch (error) {
             // Axios throws here if status != 200
             if (error.response) {
@@ -68,6 +69,7 @@ function Signup() {
             } else {
             toast.error("Something went wrong. Please try again later.");
             }
+            setLoading(false);
         }finally{
             setLoading(false);
         }
