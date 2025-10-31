@@ -22,10 +22,10 @@ async function BannerSectionContent({fetcher}) {
       align:"center",
       loop:true
     }}
-    className="w-full px-4  bg-[black]">
+    className="w-full px-4 ">
       <CarouselContent className="">
         {data.map((vid) => (
-          <CarouselItem key={vid.id} className="relative w-full max-w-[700px] h-[500px]  bg-[black] mx-2  rounded-2xl group cursor-pointer">
+          <CarouselItem key={vid.id} className="relative w-full max-w-[700px] h-[500px]  mx-2  rounded-2xl group cursor-pointer">
               <Link href={getUrlDetails(vid.id,vid.media_type)}>
                 <Image
                   src={media(vid.backdrop_path)}
