@@ -56,7 +56,7 @@ function Signup() {
             if (response.data.status === "failed") {
             toast.warning(response.data.message);
             } else if (response.data.status === "success") {
-            toast.success("Sign Up Successfully..");
+                router.push("/");
             }
         } catch (error) {
             // Axios throws here if status != 200
