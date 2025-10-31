@@ -4,13 +4,14 @@ import ShareButton from '@/components/Section/ShareButton';
 import { API_BASE_URL } from '@/lib/endpoint'
 import { FolderLock } from 'lucide-react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import {  useSearchParams } from 'next/navigation';
 import React from 'react'
 import { useSelector } from 'react-redux';
 
 function page () {
   
-  const { name } = useParams(); 
+  const searchParams = useSearchParams(); 
+  const name = searchParams.get("name");
   console.log(name)
 
   const user  = useSelector(state=>state.user);
