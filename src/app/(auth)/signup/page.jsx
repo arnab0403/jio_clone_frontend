@@ -17,7 +17,9 @@ import Link from 'next/link'
 import { api, ENDPOINT } from '@/lib/endpoint'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/navigation'
+import { LoaderCircle } from 'lucide-react'
 function Signup() {
+    const [loading,setLoading]=useState(false);
     const [userObject,setUserObject]=useState({
         name:"",
         email:"",
@@ -36,6 +38,7 @@ function Signup() {
     },[])
 
     const handleSubmit=async()=>{
+        setLoading(true);
         console.log(userObject)
         if (!userObject.name || !userObject.confirmPassword || !userObject.password || !userObject.email) {
            return toast("Please fill all the fileds before Sign Up..!");
@@ -65,6 +68,8 @@ function Signup() {
             } else {
             toast.error("Something went wrong. Please try again later.");
             }
+        }finally{
+            setLoading(false);
         }
    
     }
@@ -143,7 +148,7 @@ function Signup() {
             <div className='flex gap-1'>
                 <p>Already have an account? </p>
                  <Link href="/login" className=' underline'>
-                    Sign in
+                    {loading ? "Sign in":<LoaderCircle className='animate-spin'/>}
                 </Link>
             </div>
         </div>
