@@ -142,13 +142,15 @@ function Signup() {
         </CardContent>
         <CardFooter className="flex-col gap-2">
             <Button type="submit" className="w-full bg-[#e11d48] hover:bg-[#cb143c] cursor-pointer" onClick={handleSubmit}>
-                Sign Up
+                {!loading ? "Sign Up":<LoaderCircle className='animate-spin'/>}
             </Button>
         <div className='w-full flex flex-row justify-center text-sm pt-2'>
             <div className='flex gap-1'>
-                <p>Already have an account? </p>
-                 <Link href="/login" className=' underline'>
-                    {loading ? "Sign in":<LoaderCircle className='animate-spin'/>}
+                <p>
+                    Already have an account? 
+                </p>
+                <Link href="/login" className=' underline'>
+                    Sign Up
                 </Link>
             </div>
         </div>
