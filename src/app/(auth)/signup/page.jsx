@@ -41,9 +41,11 @@ function Signup() {
         setLoading(true);
         console.log(userObject)
         if (!userObject.name || !userObject.confirmPassword || !userObject.password || !userObject.email) {
+            setLoading(false);
            return toast("Please fill all the fileds before Sign Up..!");
         }
         if (userObject.confirmPassword!==userObject.password) {
+            setLoading(false);
             return toast.warning("Password and Confirm Password should be same")
         }
 
@@ -61,7 +63,7 @@ function Signup() {
             } else if (response.data.status === "success") {
                 router.push("/");
             }
-        setLoading(false);
+            setLoading(false);
         } catch (error) {
             // Axios throws here if status != 200
             if (error.response) {
