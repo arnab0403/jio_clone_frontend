@@ -57,11 +57,11 @@ function Signup() {
             });
 
             if (response.data.status === "failed") {
-            toast.warning(response.data.message);
+                toast.warning(response.data.message);
             } else if (response.data.status === "success") {
                 router.push("/");
             }
-            setLoading(false);
+        setLoading(false);
         } catch (error) {
             // Axios throws here if status != 200
             if (error.response) {
