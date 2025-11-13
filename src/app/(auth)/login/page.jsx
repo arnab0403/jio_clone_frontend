@@ -105,7 +105,7 @@ function Login() {
                     {loading ?<LoaderCircle className='animate-spin'/> :"Sign In"}
                 </Button>
 
-                <Button className="w-full bg-[white] hover:bg-[#cfcfcf] cursor-pointer" onClick={()=>{window.location.href=(`${API_BASE_URL}/auth/google`)}}>
+                <Button className="w-full bg-[white] hover:bg-[#cfcfcf] cursor-pointer" onClick={()=>{window.open(`${API_BASE_URL}/auth/google`,"_self")}}>
                     <Image src="/google.png" height={20} width={20} alt='google'/>
                 </Button>
             <div className='w-full flex flex-row justify-between text-sm pt-6'>
